@@ -1,0 +1,18 @@
+{
+  "category":[
+  {"catId":1,"categoryName":"Book"},
+  {"catId":2,"categoryName":"Audio"},
+  {"catId":3,"categoryName":"Video"}
+
+],
+"subCategory":{
+  "1":[{"itemName":"book1","itemDescription":"12315"},{"itemName":"book2","itemDescription":"12315"},{"itemName":"book3","itemDescription":"12315"},{"itemName":"book4","itemDescription":"12315"},
+    {"itemName":"book5","itemDescription":"12315"},{"itemName":"book6","itemDescription":"12315"},{"itemName":"book7","itemDescription":"12315"},
+    {"itemName":"book8","itemDescription":"12315"},{"itemName":"book9","itemDescription":"12315"},{"itemName":"book10","itemDescription":"12315"}],
+  "2":[{"itemName":"Audio1","itemDescription":"12315"},{"itemName":"Audio2","itemDescription":"12315"},{"itemName":"Audio3","itemDescription":"12315"},{"itemName":"Audio4","itemDescription":"12315"},{"itemName":"Audio5","itemDescription":"12315"},
+    {"itemName":"Audio6","itemDescription":"12315"},{"itemName":"Audio7","itemDescription":"12315"},{"itemName":"Audio8","itemDescription":"12315"},{"itemName":"Audio9","itemDescription":"12315"},{"itemName":"Audio10","itemDescription":"12315"}],
+  "3":[{"itemName":"Video1","itemDescription":"12315"},{"itemName":"Video2","itemDescription":"12315"},{"itemName":"Video3","itemDescription":"12315"},{"itemName":"Video4","itemDescription":"12315"},
+    {"itemName":"Video5","itemDescription":"12315"},{"itemName":"Video6","itemDescription":"12315"},{"itemName":"Video7","itemDescription":"12315"},{"itemName":"Video8","itemDescription":"12315"},
+    {"itemName":"Video9","itemDescription":"12315"},{"itemName":"Video10","itemDescription":"12315"}]
+  }
+}

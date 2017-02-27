@@ -1,0 +1,115 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "FundooHR Backend API's Specification",
+        "description": "FundooHR is not a Software product, it is a thinking which make your task easy and efficient. And we are plotting our thining in software product. Which will make our work easy. Basically we are planning to make product based on some different technologies.",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "Bridgelabz.com",
+            "email": "admin@bridgelabz.com"
+        }
+    },
+    "basePath": "/",
+    "tags": [{
+        "name": "category",
+        "description": "API for category details"
+    }],
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "Content-Type": [
+        "application/json"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json",
+        "application/xml"
+    ],
+    "paths": {
+        "/getAllCategory": {
+            "get": {
+                "tags": [
+                    "category"
+                ],
+                "description": "It will give you day wise attendance ",
+                "operationId": "findById",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "response",
+                        "schema": {
+                            "$ref": "#/definitions/GACResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/getCategoryData/{categoryId}": {
+            "get": {
+                "tags": [
+                    "category"
+                ],
+                "description": "It is use to retrieve Internship Employee to generate attendance reports who are working with tech company",
+                "operationId": "for the URL",
+                "produces": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "parameters": [{
+                    "name": "categoryId",
+                    "in": "path",
+                    "description": "You need to pass token along with your request.",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "response",
+                        "schema": {
+                            "$ref": "#/definitions/RIEResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "GACResponse": {
+            "properties": {
+                "allCategory": {
+                    "required": true,
+                    "schema":{
+                      "type":"array",
+                      "example":[
+                           {
+                             "catId": 1,
+                             "categoryName": "Book"
+                           },
+                           {
+                             "catId": 2,
+                             "categoryName": "Audio"
+                           },
+                           {
+                             "catId":3,
+                             "categoryName":"Video"
+                           }
+                      ]
+                    }
+                }
+            }
+        },
+        "400error": {
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "example": "400 Bad Request"
+                }
+            }
+        }
+    }
+}

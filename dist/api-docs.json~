@@ -1,0 +1,223 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "FundooHR Backend API's Specification",
+    "description": "FundooHR is not a Software product, it is a thinking which make your task easy and efficient. And we are plotting our thining in software product. Which will make our work easy. Basically we are planning to make product based on some different technologies.",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact":{
+       "name":"Bridgelabz.com",
+       "email":"admin@bridgelabz.com"
+    }
+  },
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Login",
+      "description": "API for login"
+    },
+    {
+      "name": "Dashboard",
+      "description": "API for something"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "Content-Type": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json",
+    "application/xml"
+  ],
+  "paths": {
+    "/login": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "description": "It authenticates the user email from company database and it returns success response with email and token. For every REST call you need to pass token and crossponding email with some extra request body which is based on REST call's.",
+        "operationId": "for the URL",
+        "produces": [
+	    "application/json",
+	    "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "emailId",
+            "in": "formData",
+            "description": "Provide a valid email address to authenticate. e.g. your@some-domain.com",
+            "required": true,
+            "type": "string",
+	    "default": "admin@bridgelabz.com"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "Provide a valid Password",
+            "required": true,
+            "type": "string",
+	    "default": "Bridge@123"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Authentcation Successful",
+            "schema": {
+              "$ref": "#/definitions/loginResponse"
+            }
+          }
+        }
+      }
+    },
+    "/readUnmarkedAttendanceEmployee": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "description": "Returns the status of something",
+        "operationId": "findById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "timeStamp",
+            "in": "query",
+            "description": "timestamp is wrapping the date and time in milliseconds format 1483401600000 ",
+            "required": true,
+            "type": "integer"
+          },
+	 {
+            "name": "x-token",
+            "in": "header",
+            "description": "You need to pass token along with your request.",
+            "required": true,
+            "type": "String"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response",
+            "schema": {
+              "$ref": "#/definitions/RUAEResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "loginResponse": {
+      "properties": {
+        "token": {
+          "required": true,
+          "type": "string",
+          "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBicmlkZ2VsYWJ6LmNvbSIsImlhdCI6MTQ4Nzc2MDY3NSwiZXhwIjoxNDg4OTcwMjc1fQ.ALOhIMuqtczsrZkR-vtTbceP5djAQNk7CCwoZzKkOCY"
+        },
+        "status": {
+          "required": true,
+          "type": "Interger",
+          "example": "200"
+        },
+        "message": {
+          "required": true,
+          "type": "string",
+          "example": "login success"
+        }
+      }
+    },
+    "RUAEResponse": {
+      "200": {
+  
+
+      },
+      "400": {
+        "description": "Unrecognized quote or group ID",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/definitions/UnrecognizedQuoteId"
+            },
+            {
+              "$ref": "#/definitions/UnrecognizedGroupId"
+            }
+          ]
+        }
+      },
+      "properties": {
+"umarkedEmployee":  {
+          "required": true,
+          "type": "schema",
+          "example": [
+    {
+      "employeeName": "Shwetali",
+      "employeeStatus": "Fellowship",
+      "company": "BridgeLabz",
+      "mobile": "9876000022",
+      "emailId": "khambeshwetali@ymail.com",
+      "blStartDate": "1477308028",
+      "companyJoinDate": "1477308028",
+      "companyLeaveDate": "1477308028",
+      "leaveTaken": 0,
+      "imageUrl": "http://192.168.1.102:3000/image2.jpg",
+      "engineerId": "40002EI"
+    },
+    {
+      "employeeName": "Bhushan",
+      "employeeStatus": "Fellowship",
+      "company": "BridgeLabz",
+      "mobile": "9876000021",
+      "emailId": "me.bhushan4u@gmail.com",
+      "blStartDate": "1477308028",
+      "companyJoinDate": "1477308028",
+      "companyLeaveDate": "1477308028",
+      "leaveTaken": 0,
+      "imageUrl": "http://192.168.1.102:3000/image2.jpg",
+      "engineerId": "40003EI"
+    }
+  ]
+        },
+  "timeStamp":{
+          "required": true,
+          "type": "integer",
+          "example":1483401600000},
+  "unmarkedNumber": {
+          "required": true,
+          "type": "integer",
+          "example":2},
+  "totalEmployee": {
+          "required": true,
+          "type": "integer",
+          "example":36}
+      }
+    },
+    "delete": {
+      "properties": {
+        "jobID": {
+          "required": true,
+          "type": "string",
+          "example": "234344234234"
+        },
+        "status": {
+          "required": true,
+          "type": "string",
+          "example": "deleted"
+        }
+      }
+    },
+    "400error": {
+      "properties": {
+        "message": {
+          "type": "string",
+          "example": "400 Bad Request"
+        }
+      }
+    }
+  }
+}
