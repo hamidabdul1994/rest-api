@@ -16,7 +16,6 @@
         "description": "API for category details"
     }],
     "schemes": [
-        "http",
         "https"
     ],
     "Content-Type": [
@@ -26,8 +25,7 @@
         "application/json"
     ],
     "produces": [
-        "application/json",
-        "application/xml"
+        "application/json"
     ],
     "paths": {
         "/getAllCategory": {
@@ -58,7 +56,7 @@
                 "description": "It is use to retrieve Internship Employee to generate attendance reports who are working with tech company",
                 "operationId": "for the URL",
                 "produces": [
-                    "application/x-www-form-urlencoded"
+                    "application/json"
                 ],
                 "parameters": [{
                     "name": "categoryId",
