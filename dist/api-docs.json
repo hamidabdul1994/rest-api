@@ -69,7 +69,34 @@
                     "200": {
                         "description": "response",
                         "schema": {
-                            "$ref": "#/definitions/RIEResponse"
+                            "$ref": "#/definitions/GACResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "tags": [
+                    "category"
+                ],
+                "description": "It is use to login",
+                "operationId": "for the URL",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "username",
+                    "in": "body",
+                    "description": "You need to pass token along with your request.",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "response",
+                        "schema": {
+                            "$ref": "#/definitions/GACResponse"
                         }
                     }
                 }
